@@ -2,7 +2,41 @@
 PRODUCT_COPY_FILES += \
     vendor/aidonnou-rom/prebuilt/stuff/omniclock.apk:system/app/OmniClock/OmniClock.apk
 
-
+# HTC Camera (hope this works)
+PRODUCT_COPY_FILES += \
+    vendor/aidonnou-rom/prebuilt/stuff/htccamera.apk:system/priv-app/HTCCamera/HTCCamera.apk\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libalign_exiv2.so:system/priv-app/HTCCamera/lib/arm/libalign_exiv2.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libalign_image_stack.so:system/priv-app/HTCCamera/lib/arm/libalign_image_stack.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libalign_jpeg.so:system/priv-app/HTCCamera/lib/arm/libalign_jpeg.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libalign_tiff.so:system/priv-app/HTCCamera/lib/arm/libalign_tiff.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libalign_vigraimpex.so:system/priv-app/HTCCamera/lib/arm/libalign_vigraimpex.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libbv_panodata_hdk_v6.so:system/priv-app/HTCCamera/lib/arm/libbv_panodata_hdk_v6.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libcam_exif2.so:system/priv-app/HTCCamera/lib/arm/libcam_exif2.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libcam_imagelib.so:system/priv-app/HTCCamera/lib/arm/libcam_imagelib.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libcimagegif-jni.so:system/priv-app/HTCCamera/lib/arm/libcimagegif-jni.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libexif_lib1_jni_v09.so:system/priv-app/HTCCamera/lib/arm/libexif_lib1_jni_v09.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libexif_lib1_v09.so:system/priv-app/HTCCamera/lib/arm/libexif_lib1_v09.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libgifdecoder.so:system/priv-app/HTCCamera/lib/arm/libgifdecoder.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libgifdecoder2.so:system/priv-app/HTCCamera/lib/arm/libgifdecoder2.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libhtc_humanprocess.so:system/priv-app/HTCCamera/lib/arm/libhtc_humanprocess.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libhtc_humanprocess_mtk.so:system/priv-app/HTCCamera/lib/arm/libhtc_humanprocess_mtk.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libhtc_humanprocess_snapshot.so:system/priv-app/HTCCamera/lib/arm/libhtc_humanprocess_snapshot.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libhtc_ufocusprocess.so:system/priv-app/HTCCamera/lib/arm/libhtc_ufocusprocess.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libhtccamera.so:system/priv-app/HTCCamera/lib/arm/libhtccamera.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libjpeg_turbo.so:system/priv-app/HTCCamera/lib/arm/libjpeg_turbo.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libmorpho_image_stitcher3.so:system/priv-app/HTCCamera/lib/arm/libmorpho_image_stitcher3.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libopencv_core.so:system/priv-app/HTCCamera/lib/arm/libopencv_core.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libopencv_highgui.so:system/priv-app/HTCCamera/lib/arm/libopencv_highgui.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libopencv_imgproc.so:system/priv-app/HTCCamera/lib/arm/libopencv_imgproc.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libopencv_objdetect.so:system/priv-app/HTCCamera/lib/arm/libopencv_objdetect.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libopencv_photo.so:system/priv-app/HTCCamera/lib/arm/libopencv_photo.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libpanoglviewer_hdk_v14.so:system/priv-app/HTCCamera/lib/arm/libpanoglviewer_hdk_v14.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libpanoramaplus.so:system/priv-app/HTCCamera/lib/arm/libpanoramaplus.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libpanostitcher.so:system/priv-app/HTCCamera/lib/arm/libpanostitcher.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libsecuritysdk-1.0.13.so:system/priv-app/HTCCamera/lib/arm/libsecuritysdk-1.0.13.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libtbb.so:system/priv-app/HTCCamera/lib/arm/libtbb.so\
+    vendor/aidonnou-rom/prebuilt/stuff/htcclib/libtbdecode.so:system/priv-app/HTCCamera/lib/arm/libtbdecode.so
+    
 # HTC Editor
 PRODUCT_COPY_FILES += \
     vendor/aidonnou-rom/prebuilt/stuff/htceditor.apk:system/priv-app/HTCEditor/HTCEditor.apk\
@@ -154,4 +188,3 @@ PRODUCT_COPY_FILES += \
     vendor/aidonnou-rom/prebuilt/stuff/fw/com.sonymobile.softreset.jar:system/framework/com.sonymobile.softreset.jar\
     vendor/aidonnou-rom/prebuilt/stuff/fw/semc_audioeffectif.jar:system/framework/semc_audioeffectif.jar\
     vendor/aidonnou-rom/prebuilt/stuff/fw/SemcGenericUxpRes/SemcGenericUxpRes.apk:system/framework/SemcGenericUxpRes/SemcGenericUxpRes.apk
-
