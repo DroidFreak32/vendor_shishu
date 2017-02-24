@@ -10,9 +10,9 @@ Here's a list of apps replaced.
 | Original app        | Replaced with          |
 |:-------------:|:-------------:|
 | Gallery   | HTC Gallery |
-| Music/Eleven    | MyPlayer     |
+| Music/Eleven    | Auracle     |
 | Browser | Chromium *     |
-| Camera | HTC Camera *      |
+| Camera | HTC Camera      |
 | Clock (DeskClock) | OmniClock      |
 | LOS File Manager/Any other | Amaze File Manager      |
 
