@@ -103,9 +103,9 @@ PRODUCT_COPY_FILES += \
     vendor/bootleggers/stuff/libexif_lib1_v09.so:system/lib/libexif_lib1_v09.so\
     vendor/bootleggers/stuff/libexif_lib1_jni_v09.so:system/lib/libexif_lib1_jni_v09.so
 
-# MyPlayer
+# Auracle MP
 PRODUCT_COPY_FILES += \
-    vendor/bootleggers/stuff/myplayer.apk:system/app/myplayer/myplayer.apk
+    vendor/bootleggers/stuff/auracle.apk:system/app/Auracle/Auracle.apk
 
 
 # Amaze FM
