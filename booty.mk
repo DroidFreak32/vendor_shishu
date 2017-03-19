@@ -188,3 +188,18 @@ PRODUCT_COPY_FILES += \
     vendor/bootleggers/stuff/fw/com.sonymobile.softreset.jar:system/framework/com.sonymobile.softreset.jar\
     vendor/bootleggers/stuff/fw/semc_audioeffectif.jar:system/framework/semc_audioeffectif.jar\
     vendor/bootleggers/stuff/fw/SemcGenericUxpRes/SemcGenericUxpRes.apk:system/framework/SemcGenericUxpRes/SemcGenericUxpRes.apk
+    
+#Shishu Sounds 0.1
+SHISHUSOUNDS_PATH := vendor/bootleggers/stuff/sound
+
+# All the sounds
+PRODUCT_COPY_FILES += \
+    $(SHISHUSOUNDS_PATH)/Frost.ogg:system/media/audio/ringtones/Frost.ogg \
+    $(SHISHUSOUNDS_PATH)/Nights.ogg:system/media/audio/notifications/Nights.ogg \
+    $(SHISHUSOUNDS_PATH)/LikeWhat.ogg:system/media/audio/alarms/LikeWhat.ogg
+    
+#Set the new custom sounds
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.ringtone=Frost.ogg \
+    ro.config.notification_sound=Nights.ogg \
+    ro.config.alarm_alert=LikeWhat.ogg
