@@ -190,7 +190,7 @@ PRODUCT_COPY_FILES += \
     vendor/bootleggers/stuff/fw/SemcGenericUxpRes/SemcGenericUxpRes.apk:system/framework/SemcGenericUxpRes/SemcGenericUxpRes.apk
     
 #Shishu Sounds 0.1
-SHISHUSOUNDS_PATH := vendor/bootleggers/stuff/sound
+SHISHUSOUNDS_PATH := vendor/bootleggers/stuff/sounds
 
 # All the sounds
 PRODUCT_COPY_FILES += \
