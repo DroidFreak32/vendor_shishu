@@ -189,14 +189,30 @@ PRODUCT_COPY_FILES += \
     vendor/bootleggers/stuff/fw/semc_audioeffectif.jar:system/framework/semc_audioeffectif.jar\
     vendor/bootleggers/stuff/fw/SemcGenericUxpRes/SemcGenericUxpRes.apk:system/framework/SemcGenericUxpRes/SemcGenericUxpRes.apk
     
-#Shishu Sounds 0.1
+# Shishu Sounds directory
 SHISHUSOUNDS_PATH := vendor/bootleggers/stuff/sounds
 
-# All the sounds
+# Ringtone files
 PRODUCT_COPY_FILES += \
     $(SHISHUSOUNDS_PATH)/Frost.ogg:system/media/audio/ringtones/Frost.ogg \
+    $(SHISHUSOUNDS_PATH)/Beauty_pub.ogg:system/media/audio/ringtones/Beauty_pub.ogg \
+    $(SHISHUSOUNDS_PATH)/Myst.ogg:system/media/audio/ringtones/Myst.ogg \
+    
+# Notifications files
+PRODUCT_COPY_FILES += \
     $(SHISHUSOUNDS_PATH)/Nights.ogg:system/media/audio/notifications/Nights.ogg \
-    $(SHISHUSOUNDS_PATH)/LikeWhat.ogg:system/media/audio/alarms/LikeWhat.ogg
+    $(SHISHUSOUNDS_PATH)/Button.ogg:system/media/audio/notifications/Button.ogg \
+    $(SHISHUSOUNDS_PATH)/Chimes.wav:system/media/audio/notifications/Chimes.wav \
+    $(SHISHUSOUNDS_PATH)/CyanMail.ogg:system/media/audio/notifications/CyanMail.ogg \
+    $(SHISHUSOUNDS_PATH)/CyanMessage.ogg:system/media/audio/notifications/CyanMessage.ogg \
+    $(SHISHUSOUNDS_PATH)/Redmond.wav:system/media/audio/notifications/Redmond.wav \
+    $(SHISHUSOUNDS_PATH)/Talitha.ogg:system/media/audio/notifications/Talitha.ogg
+    
+    
+# Alarms files
+PRODUCT_COPY_FILES += \
+    $(SHISHUSOUNDS_PATH)/LikeWhat.ogg:system/media/audio/alarms/LikeWhat.ogg \
+    $(SHISHUSOUNDS_PATH)/Shadow.ogg:system/media/audio/alarms/Shadow.ogg
     
 #Set the new custom sounds
 PRODUCT_PROPERTY_OVERRIDES += \
