@@ -196,7 +196,7 @@ SHISHUSOUNDS_PATH := vendor/bootleggers/stuff/sounds
 PRODUCT_COPY_FILES += \
     $(SHISHUSOUNDS_PATH)/Frost.ogg:system/media/audio/ringtones/Frost.ogg \
     $(SHISHUSOUNDS_PATH)/Beauty_pub.ogg:system/media/audio/ringtones/Beauty_pub.ogg \
-    $(SHISHUSOUNDS_PATH)/Myst.ogg:system/media/audio/ringtones/Myst.ogg \
+    $(SHISHUSOUNDS_PATH)/Myst.ogg:system/media/audio/ringtones/Myst.ogg
     
 # Notifications files
 PRODUCT_COPY_FILES += \
