@@ -1,9 +1,39 @@
-# Shishu Sounds directory
+
+## Shishu Makefile. Done without Knowledge. 2017.
+
+## Define automatically all the shishu stuff.
+
+ifndef WITH_BOOT_HTC_STUFF
+    WITH_BOOT_HTC_STUFF := true
+endif
+
+ifndef WITH_BOOT_MUSIC
+    WITH_BOOT_MUSIC := true
+endif
+
+ifndef WITH_BOOT_FM
+    WITH_BOOT_FM := true
+endif
+
+ifndef WITH_BOOT_BROWSER
+    WITH_BOOT_BROWSER := true
+endif
+
+ifndef WITH_BOOT_CLOCK
+    WITH_BOOT_CLOCK := true
+endif
+
+ifndef WITH_BOOT_SHISHUP
+    WITH_BOOT_SHISHUP := false
+endif
+
+# Shishu Stuff directory
 SHISHUSTUFF_PATH := vendor/bootleggers/prebuilt
 
 # OmniClock 
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Clock/omniclock.apk:system/app/OmniClock/OmniClock.apk
+endif
 
 # HTC Camera (hope this works)
 PRODUCT_COPY_FILES += \
@@ -115,6 +145,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/FileBrowser/amaze.apk:system/app/Amaze/Amaze.apk
 
+ifeq ($(WITH_BOOT_CLOCK),true)
+PRODUCT_COPY_FILES += \
+    $(SHISHUSTUFF_PATH)/Browser/Chromium.apk:system/app/Chromium/Chromium.apk
+endif
+
 # Permissions MOD, etc part.
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Permissions/com.cyngn.audiofx.xml:system/etc/permissions/com.cyngn.audiofx.xml\
@@ -214,6 +249,15 @@ PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Sounds/LikeWhat.ogg:system/media/audio/alarms/LikeWhat.ogg \
     $(SHISHUSTUFF_PATH)/Sounds/Shadow.ogg:system/media/audio/alarms/Shadow.ogg
 
+ifeq ($(WITH_BOOT_HTC_STUFF),true)
+PRODUCT_COPY_FILES += \
+    $(SHISHUSTUFF_PATH)/Shishu/ShishuWalls.apk:system/app/ShishuWalls/ShishuWalls.apk\
+    $(SHISHUSTUFF_PATH)/Shishu/Aidonnou-Headers.apk:system/app/Aidonnou-Headers/Aidonnou-Headers.apk\
+    $(SHISHUSTUFF_PATH)/Shishu/About-Shishu.apk:system/app/AboutShishu/AboutShishu.apk
+else
+PRODUCT_COPY_FILES += \
+    $(SHISHUSTUFF_PATH)/Shishu/AboutShishu.apk:system/app/AboutShishu/AboutShishu.apk
+endif
     
 #Set the new custom sounds
 PRODUCT_PROPERTY_OVERRIDES += \
