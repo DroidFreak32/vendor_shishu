@@ -31,12 +31,6 @@ endif
 SHISHUSTUFF_PATH := vendor/bootleggers/prebuilt
 
 
-# OmniClock
-ifeq ($(WITH_BOOT_CLOCK),true)
-PRODUCT_COPY_FILES += \
-    $(SHISHUSTUFF_PATH)/Clock/OmniClock.apk:system/app/OmniClock/OmniClock.apk
-endif
-
 # HTC Camera (hope this works)
 ifeq ($(WITH_BOOT_HTC_STUFF),true)
 PRODUCT_COPY_FILES += \
@@ -149,23 +143,28 @@ PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/HTCStuff/libexif_lib1_jni_v09.so:system/lib/libexif_lib1_jni_v09.so
 endif
 
-# Timber
+# Music App
 ifeq ($(WITH_BOOT_MUSIC),true)
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Music/RetroMusic.apk:system/app/RetroMusic/RetroMusic.apk
 endif
 
-
-# Amaze FM
+# File Manager
 ifeq ($(WITH_BOOT_FM),true)
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/FileBrowser/MKExplorer.apk:system/app/MKExplorer/MKExplorer.apk
 endif
 
-
+#Browser
 ifeq ($(WITH_BOOT_BROWSER),true)
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Browser/RocketBrowser.apk:system/app/RocketBrowser/RocketBrowser.apk
+endif
+
+# OmniClock
+ifeq ($(WITH_BOOT_CLOCK),true)
+PRODUCT_COPY_FILES += \
+    $(SHISHUSTUFF_PATH)/Clock/OmniClock.apk:system/app/OmniClock/OmniClock.apk
 endif
 
 # Permissions MOD, etc part.
@@ -245,6 +244,8 @@ PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Permissions/Framework/semc_audioeffectif.jar:system/framework/semc_audioeffectif.jar\
     $(SHISHUSTUFF_PATH)/Permissions/Framework/SemcGenericUxpRes/SemcGenericUxpRes.apk:system/framework/SemcGenericUxpRes/SemcGenericUxpRes.apk
 
+
+#Check conditions to add shishu apps
 ifeq ($(WITH_BOOT_SHISHUCUSPI),true)
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Shishu/ShishuWalls.apk:system/app/ShishuWalls/ShishuWalls.apk\
