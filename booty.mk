@@ -24,7 +24,7 @@ ifndef WITH_BOOT_CLOCK
 endif
 
 ifndef WITH_BOOT_SHISHUCUSPI
-    WITH_BOOT_SHISHUCUSPI := true
+    WITH_BOOT_SHISHUCUSPI := false
 endif
 
 # Shishu Stuff directory
@@ -168,6 +168,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Permissions MOD, etc part.
+ifeq ($(WITH_BOOT_SHISHUCUSPI),true)
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Permissions/com.cyngn.audiofx.xml:system/etc/permissions/com.cyngn.audiofx.xml\
     $(SHISHUSTUFF_PATH)/Permissions/com.google.android.camera.experimental2015.xml:system/etc/permissions/com.google.android.camera.experimental2015.xml\
@@ -207,8 +208,10 @@ PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Permissions/com.sonymobile.settings.illumination.xml:system/etc/permissions/com.sonymobile.settings.illumination.xml\
     $(SHISHUSTUFF_PATH)/Permissions/com.sonymobile.settings.shakecontrol.xml:system/etc/permissions/com.sonymobile.settings.shakecontrol.xml\
     $(SHISHUSTUFF_PATH)/Permissions/com.sonymobile.softreset.xml:system/etc/permissions/com.sonymobile.softreset.xml
+endif
 
 # Permissions MOD, framework part.
+ifeq ($(WITH_BOOT_SHISHUCUSPI),true)
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Permissions/Framework/com.google.android.camera.experimental2015.jar:system/framework/com.google.android.camera.experimental2015.jar\
     $(SHISHUSTUFF_PATH)/Permissions/Framework/com.google.android.camera2.jar:system/framework/com.google.android.camera2.jar\
@@ -243,9 +246,10 @@ PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Permissions/Framework/com.sonymobile.softreset.jar:system/framework/com.sonymobile.softreset.jar\
     $(SHISHUSTUFF_PATH)/Permissions/Framework/semc_audioeffectif.jar:system/framework/semc_audioeffectif.jar\
     $(SHISHUSTUFF_PATH)/Permissions/Framework/SemcGenericUxpRes/SemcGenericUxpRes.apk:system/framework/SemcGenericUxpRes/SemcGenericUxpRes.apk
-
+endif
 
 #Check conditions to add shishu apps
+#Remember: The dash one is the public one, the other is the good one
 ifeq ($(WITH_BOOT_SHISHUCUSPI),true)
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Shishu/ShishuWalls.apk:system/app/ShishuWalls/ShishuWalls.apk\
