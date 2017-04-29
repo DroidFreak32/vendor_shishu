@@ -248,6 +248,31 @@ PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Permissions/Framework/SemcGenericUxpRes/SemcGenericUxpRes.apk:system/framework/SemcGenericUxpRes/SemcGenericUxpRes.apk
 endif
 
+# Dimusa Tweaks (Ported from AOSGP, kudos to them)
+ifeq ($(WITH_BOOT_SHISHUCUSPI),true)
+PRODUCT_COPY_FILES += \
+    $(SHISHUSTUFF_PATH)/DimusaTweaks/00ARCHIDROID_INITD:system/etc/init.d/00ARCHIDROID_INITD \
+    $(SHISHUSTUFF_PATH)/DimusaTweaks/LS00better_scrolling:system/etc/init.d/LS00better_scrolling \
+    $(SHISHUSTUFF_PATH)/DimusaTweaks/LS00Cleaner:system/etc/init.d/LS00Cleaner \
+    $(SHISHUSTUFF_PATH)/DimusaTweaks/LS00CPU:system/etc/init.d/LS00CPU \
+    $(SHISHUSTUFF_PATH)/DimusaTweaks/LS00CPU_optimizer:system/etc/init.d/LS00CPU_optimizer \
+    $(SHISHUSTUFF_PATH)/DimusaTweaks/LS00GP_services_drainfix:system/etc/init.d/LS00GP_services_drainfix \
+    $(SHISHUSTUFF_PATH)/DimusaTweaks/LS00improve_battery:system/etc/init.d/LS00improve_battery \
+    $(SHISHUSTUFF_PATH)/DimusaTweaks/LS00IO:system/etc/init.d/LS00IO \
+    $(SHISHUSTUFF_PATH)/DimusaTweaks/LS00Kernel_tweaks:system/etc/init.d/LS00Kernel_tweaks \
+    $(SHISHUSTUFF_PATH)/DimusaTweaks/LS00Kill_google_apps:system/etc/init.d/LS00Kill_google_apps \
+    $(SHISHUSTUFF_PATH)/DimusaTweaks/LS00Net_tweaks:system/etc/init.d/LS00Net_tweaks \
+    $(SHISHUSTUFF_PATH)/DimusaTweaks/LS00Ram_manager_BL:system/etc/init.d/LS00Ram_manager_BL \
+    $(SHISHUSTUFF_PATH)/DimusaTweaks/LS00VM_tweaks:system/etc/init.d/LS00VM_tweaks \
+    $(SHISHUSTUFF_PATH)/DimusaTweaks/X00CORE4:system/etc/init.d/X00CORE4 \
+    $(SHISHUSTUFF_PATH)/DimusaTweaks/X00DEFAULT:system/etc/init.d/X00DEFAULT \
+    $(SHISHUSTUFF_PATH)/DimusaTweaks/X00LIQUID:system/etc/init.d/X00LIQUID \
+    $(SHISHUSTUFF_PATH)/DimusaTweaks/X00MPS2:system/etc/init.d/X00MPS2 \
+    $(SHISHUSTUFF_PATH)/DimusaTweaks/X00RENICE:system/etc/init.d/X00RENICE \
+    $(SHISHUSTUFF_PATH)/DimusaTweaks/X00TRIM:system/etc/init.d/X00TRIM \
+    $(SHISHUSTUFF_PATH)/DimusaTweaks/X00ZIP:system/etc/init.d/X00ZIP \
+endif
+
 #Check conditions to add shishu apps
 #Remember: The dash one is the public one, the other is the good one
 ifeq ($(WITH_BOOT_SHISHUCUSPI),true)
