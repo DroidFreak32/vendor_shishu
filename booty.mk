@@ -3,28 +3,28 @@
 
 ## Define automatically all the shishu stuff.
 
-ifndef WITH_BOOT_HTC_STUFF
-    WITH_BOOT_HTC_STUFF := true
+ifndef WITH_SHISHU_HTC 
+    WITH_SHISHU_HTC := true
 endif
 
-ifndef WITH_BOOT_MUSIC
-    WITH_BOOT_MUSIC := true
+ifndef WITH_SHISHU_MUSIC
+    WITH_SHISHU_MUSIC := true
 endif
 
-ifndef WITH_BOOT_FM
-    WITH_BOOT_FM := true
+ifndef WITH_SHISHU_FM
+    WITH_SHISHU_FM := true
 endif
 
-ifndef WITH_BOOT_BROWSER
-    WITH_BOOT_BROWSER := true
+ifndef WITH_SHISHU_BROWSER
+    WITH_SHISHU_BROWSER := true
 endif
 
-ifndef WITH_BOOT_CLOCK
-    WITH_BOOT_CLOCK := true
+ifndef WITH_SHISHU_CLOCK
+    WITH_SHISHU_CLOCK := true
 endif
 
-ifndef WITH_BOOT_SHISHUCUSPI
-    WITH_BOOT_SHISHUCUSPI := false
+ifndef BUILD_TRUSHISHU
+    BUILD_TRUSHISHU := false
 endif
 
 # Shishu Stuff directory
@@ -32,7 +32,7 @@ SHISHUSTUFF_PATH := vendor/bootleggers/prebuilt
 
 
 # HTC Camera (hope this works)
-ifeq ($(WITH_BOOT_HTC_STUFF),true)
+ifeq ($(WITH_SHISHU_HTC),true)
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/HTCStuff/htccamera.apk:system/priv-app/HTCCamera/HTCCamera.apk\
     $(SHISHUSTUFF_PATH)/HTCStuff/camlibs/libalign_exiv2.so:system/priv-app/HTCCamera/lib/arm/libalign_exiv2.so\
@@ -69,7 +69,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 # HTC Editor
-ifeq ($(WITH_BOOT_HTC_STUFF),true)
+ifeq ($(WITH_SHISHU_HTC),true)
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/HTCStuff/htceditor.apk:system/priv-app/HTCEditor/HTCEditor.apk\
     $(SHISHUSTUFF_PATH)/HTCStuff/editlibs/libalDE_SDE_TWO.so:system/priv-app/HTCEditor/lib/arm/libalDE_SDE_TWO.so\
@@ -112,7 +112,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 # HTC Gallery
-ifeq ($(WITH_BOOT_HTC_STUFF),true)
+ifeq ($(WITH_SHISHU_HTC),true)
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/HTCStuff/htcgallery.apk:system/priv-app/HTCGallery/HTCGallery.apk\
     $(SHISHUSTUFF_PATH)/HTCStuff/gallibs/libexif2.so:system/priv-app/HTCGallery/lib/arm/libexif2.so\
@@ -127,14 +127,14 @@ PRODUCT_COPY_FILES += \
 endif
 
 # HTC Video
-ifeq ($(WITH_BOOT_HTC_STUFF),true)
+ifeq ($(WITH_SHISHU_HTC),true)
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/HTCStuff/htcvideo.apk:system/priv-app/HTCVideoPlayer/HTCVideoPlayer.apk
 endif
 
 
 # HTC Libs
-ifeq ($(WITH_BOOT_HTC_STUFF),true)
+ifeq ($(WITH_SHISHU_HTC),true)
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/HTCStuff/libbv_panodata_hdk_v6.so:system/lib/libbv_panodata_hdk_v6.so\
     $(SHISHUSTUFF_PATH)/HTCStuff/libgifdecoder.so:system/lib/libgifdecoder.so\
@@ -144,31 +144,31 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Music App
-ifeq ($(WITH_BOOT_MUSIC),true)
+ifeq ($(WITH_SHISHU_MUSIC),true)
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Music/RetroMusic.apk:system/app/RetroMusic/RetroMusic.apk
 endif
 
 # File Manager
-ifeq ($(WITH_BOOT_FM),true)
+ifeq ($(WITH_SHISHU_FM),true)
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/FileBrowser/MKExplorer.apk:system/app/MKExplorer/MKExplorer.apk
 endif
 
 #Browser
-ifeq ($(WITH_BOOT_BROWSER),true)
+ifeq ($(WITH_SHISHU_BROWSER),true)
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Browser/RocketBrowser.apk:system/app/RocketBrowser/RocketBrowser.apk
 endif
 
 # OmniClock
-ifeq ($(WITH_BOOT_CLOCK),true)
+ifeq ($(WITH_SHISHU_CLOCK),true)
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Clock/OmniClock.apk:system/app/OmniClock/OmniClock.apk
 endif
 
 # Permissions MOD, etc part.
-ifeq ($(WITH_BOOT_SHISHUCUSPI),true)
+ifeq ($(BUILD_TRUSHISHU),true)
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Permissions/com.cyngn.audiofx.xml:system/etc/permissions/com.cyngn.audiofx.xml\
     $(SHISHUSTUFF_PATH)/Permissions/com.google.android.camera.experimental2015.xml:system/etc/permissions/com.google.android.camera.experimental2015.xml\
@@ -211,7 +211,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Permissions MOD, framework part.
-ifeq ($(WITH_BOOT_SHISHUCUSPI),true)
+ifeq ($(BUILD_TRUSHISHU),true)
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Permissions/Framework/com.google.android.camera.experimental2015.jar:system/framework/com.google.android.camera.experimental2015.jar\
     $(SHISHUSTUFF_PATH)/Permissions/Framework/com.google.android.camera2.jar:system/framework/com.google.android.camera2.jar\
@@ -250,7 +250,7 @@ endif
 
 #Check conditions to add shishu apps
 #Remember: The dash one is the public one, the other is the good one
-ifeq ($(WITH_BOOT_SHISHUCUSPI),true)
+ifeq ($(BUILD_TRUSHISHU),true)
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Shishu/ShishuWalls.apk:system/app/ShishuWalls/ShishuWalls.apk\
     $(SHISHUSTUFF_PATH)/Shishu/Aidonnou-Headers.apk:system/app/Aidonnou-Headers/Aidonnou-Headers.apk\
