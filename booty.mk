@@ -258,7 +258,8 @@ PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Shishu/AboutShishu.apk:system/app/AboutShishu/AboutShishu.apk
 else
 PRODUCT_COPY_FILES += \
-    $(SHISHUSTUFF_PATH)/Shishu/About-Shishu.apk:system/app/AboutShishu/AboutShishu.apk
+    $(SHISHUSTUFF_PATH)/Shishu/About-Shishu.apk:system/app/AboutShishu/AboutShishu.apk\
+    $(SHISHUSTUFF_PATH)/Shishu/Aidonnou-Headers.apk:system/app/Aidonnou-Headers/Aidonnou-Headers.apk
 endif
 
 # Ringtone files
@@ -305,5 +306,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.notification_sound=Nights.ogg \
     ro.config.alarm_alert=LikeWhat.ogg
 
-#Adding the prebuilt gapps stuff
+#Adding the prebuilt gapps stuff if it's a LT build so it's more fun
+ifeq ($(BUILD_TRUSHISHU),true)
 include vendor/bootleggers/prebuilt/BeansGapps/prebuilt.mk
+endif
