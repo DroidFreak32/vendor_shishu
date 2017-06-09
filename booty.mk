@@ -254,7 +254,7 @@ ifeq ($(BUILD_TRUSHISHU),true)
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Shishu/ShishuWalls.apk:system/app/ShishuWalls/ShishuWalls.apk\
     $(SHISHUSTUFF_PATH)/Shishu/Aidonnou-Headers.apk:system/app/Aidonnou-Headers/Aidonnou-Headers.apk\
-    $(SHISHUSTUFF_PATH)/Shishu/Aidonnou-Headers-cf4subs.apk:system/app/Aidonnou-Headers-SubsFix/Aidonnou-Headers-SubsFix.apk\
+    $(SHISHUSTUFF_PATH)/Shishu/Aidonnou-Extras.apk:system/app/Aidonnou-Extras/Aidonnou-Extras.apk\
     $(SHISHUSTUFF_PATH)/Shishu/AboutShishu.apk:system/app/AboutShishu/AboutShishu.apk
 else
 PRODUCT_COPY_FILES += \
