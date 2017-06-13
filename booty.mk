@@ -23,6 +23,10 @@ ifndef WITH_SHISHU_CLOCK
     WITH_SHISHU_CLOCK := true
 endif
 
+ifndef WITH_SHISHU_LAUNCHER 
+    WITH_SHISHU_LAUNCHER := true
+endif
+
 ifndef BUILD_TRUSHISHU
     BUILD_TRUSHISHU := false
 endif
@@ -165,6 +169,12 @@ endif
 ifeq ($(WITH_SHISHU_CLOCK),true)
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Clock/OmniClock.apk:system/app/OmniClock/OmniClock.apk
+endif
+
+# Launcher
+ifeq ($(WITH_SHISHU_LAUNCHER),true)
+PRODUCT_COPY_FILES += \
+    $(SHISHUSTUFF_PATH)/Launcher/MotoLauncher.apk:system/app/MotoLauncher/MotoLauncher.apk
 endif
 
 # Permissions MOD, etc part.
