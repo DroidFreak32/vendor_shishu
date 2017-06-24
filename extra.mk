@@ -184,11 +184,6 @@ PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Permissions/Framework/SemcGenericUxpRes/SemcGenericUxpRes.apk:system/framework/SemcGenericUxpRes/SemcGenericUxpRes.apk
 endif
 
-#Adding the prebuilt gapps stuff if it's a LT build so it's more fun
-ifeq ($(BUILD_TRUSHISHU),true)
-include vendor/shishu/prebuilt/BeansGapps/prebuilt.mk
-endif
-
 # Ringtone files
 PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Sounds/Frost.ogg:system/media/audio/ringtones/Frost.ogg \

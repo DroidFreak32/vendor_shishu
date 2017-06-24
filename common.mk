@@ -35,6 +35,7 @@ SHISHUSTUFF_PATH := vendor/shishu/prebuilt
 ifeq ($(WITH_SHISHU_HTC),true)
   PRODUCT_PACKAGES +=  \
      HTCamera \
+     HTCEditor \
      HTCGallery \
      HTCVideo
    
@@ -95,6 +96,12 @@ else
   PRODUCT_PACKAGES +=  \
      About-Shishu \
      AidonnouHeaders
+endif
+
+#Include PureNexus Gapps made by beanstown106
+#Adding the prebuilt gapps stuff if it's a LT build so it's more fun
+ifeq ($(BUILD_TRUSHISHU),true)
+include vendor/shishu/prebuilt/BeansGapps/prebuilt.mk
 endif
 
 #Add a extra overlay folder just for the wallpaper
