@@ -101,7 +101,7 @@ endif
 #Include PureNexus Gapps made by beanstown106
 #Adding the prebuilt gapps stuff if it's a LT build so it's more fun
 ifeq ($(BUILD_TRUSHISHU),true)
-include vendor/shishu/prebuilt/BeansGapps/prebuilt.mk
+-include vendor/shishu/prebuilt/BeansGapps/prebuilt.mk
 endif
 
 #Add a extra overlay folder just for the wallpaper
