@@ -108,7 +108,7 @@ LOCAL_SRC_FILES := Clock/$(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
 LOCAL_CERTIFICATE := PRESIGNED
-LOCAL_OVERRIDES_PACKAGES := DeskClock OmniClock
+LOCAL_OVERRIDES_PACKAGES := DeskClock OmniClock DeskClockGoogle
 include $(BUILD_PREBUILT)
 
 #Launcher App
@@ -119,7 +119,7 @@ LOCAL_SRC_FILES := Launcher/$(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
 LOCAL_CERTIFICATE := PRESIGNED
-LOCAL_OVERRIDES_PACKAGES := Launcher2 Launcher3 Trebuchet PixelLauncher
+LOCAL_OVERRIDES_PACKAGES := Launcher2 Launcher3 Trebuchet PixelLauncher VLauncher 
 include $(BUILD_PREBUILT)
 
 ##Shishu Apps
