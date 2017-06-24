@@ -1,44 +1,9 @@
 
 ## Shishu Makefile. Done without Knowledge. 2017.
 
-## Define automatically all the shishu stuff.
-
-ifndef WITH_SHISHU_HTC 
-    WITH_SHISHU_HTC := true
-endif
-
-ifndef WITH_SHISHU_MUSIC
-    WITH_SHISHU_MUSIC := true
-endif
-
-ifndef WITH_SHISHU_FM
-    WITH_SHISHU_FM := true
-endif
-
-ifndef WITH_SHISHU_BROWSER
-    WITH_SHISHU_BROWSER := true
-endif
-
-ifndef WITH_SHISHU_CLOCK
-    WITH_SHISHU_CLOCK := true
-endif
-
-ifndef WITH_SHISHU_LAUNCHER 
-    WITH_SHISHU_LAUNCHER := true
-endif
-
-ifndef BUILD_TRUSHISHU
-    BUILD_TRUSHISHU := false
-endif
-
-# Shishu Stuff directory
-SHISHUSTUFF_PATH := vendor/bootleggers/prebuilt
-
-
 # HTC Camera (hope this works)
 ifeq ($(WITH_SHISHU_HTC),true)
 PRODUCT_COPY_FILES += \
-    $(SHISHUSTUFF_PATH)/HTCStuff/htccamera.apk:system/priv-app/HTCCamera/HTCCamera.apk\
     $(SHISHUSTUFF_PATH)/HTCStuff/camlibs/libalign_exiv2.so:system/priv-app/HTCCamera/lib/arm/libalign_exiv2.so\
     $(SHISHUSTUFF_PATH)/HTCStuff/camlibs/libalign_image_stack.so:system/priv-app/HTCCamera/lib/arm/libalign_image_stack.so\
     $(SHISHUSTUFF_PATH)/HTCStuff/camlibs/libalign_jpeg.so:system/priv-app/HTCCamera/lib/arm/libalign_jpeg.so\
@@ -75,7 +40,6 @@ endif
 # HTC Editor
 ifeq ($(WITH_SHISHU_HTC),true)
 PRODUCT_COPY_FILES += \
-    $(SHISHUSTUFF_PATH)/HTCStuff/htceditor.apk:system/priv-app/HTCEditor/HTCEditor.apk\
     $(SHISHUSTUFF_PATH)/HTCStuff/editlibs/libalDE_SDE_TWO.so:system/priv-app/HTCEditor/lib/arm/libalDE_SDE_TWO.so\
     $(SHISHUSTUFF_PATH)/HTCStuff/editlibs/libalDynamicWarping_SDW_TWO.so:system/priv-app/HTCEditor/lib/arm/libalDynamicWarping_SDW_TWO.so\
     $(SHISHUSTUFF_PATH)/HTCStuff/editlibs/libdepthengine_mtkwrapper.so:system/priv-app/HTCEditor/lib/arm/libdepthengine_mtkwrapper.so\
@@ -118,7 +82,6 @@ endif
 # HTC Gallery
 ifeq ($(WITH_SHISHU_HTC),true)
 PRODUCT_COPY_FILES += \
-    $(SHISHUSTUFF_PATH)/HTCStuff/htcgallery.apk:system/priv-app/HTCGallery/HTCGallery.apk\
     $(SHISHUSTUFF_PATH)/HTCStuff/gallibs/libexif2.so:system/priv-app/HTCGallery/lib/arm/libexif2.so\
     $(SHISHUSTUFF_PATH)/HTCStuff/gallibs/libfeatures_android.so:system/priv-app/HTCGallery/lib/arm/libfeatures_android.so\
     $(SHISHUSTUFF_PATH)/HTCStuff/gallibs/libHMSGallery_imagelib.so:system/priv-app/HTCGallery/lib/arm/libHMSGallery_imagelib.so\
@@ -130,13 +93,6 @@ PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/HTCStuff/gallibs/libvima.so:system/priv-app/HTCGallery/lib/arm/libvima.so
 endif
 
-# HTC Video
-ifeq ($(WITH_SHISHU_HTC),true)
-PRODUCT_COPY_FILES += \
-    $(SHISHUSTUFF_PATH)/HTCStuff/htcvideo.apk:system/priv-app/HTCVideoPlayer/HTCVideoPlayer.apk
-endif
-
-
 # HTC Libs
 ifeq ($(WITH_SHISHU_HTC),true)
 PRODUCT_COPY_FILES += \
@@ -145,36 +101,6 @@ PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/HTCStuff/libgifdecoder2.so:system/lib/libgifdecoder2.so\
     $(SHISHUSTUFF_PATH)/HTCStuff/libexif_lib1_v09.so:system/lib/libexif_lib1_v09.so\
     $(SHISHUSTUFF_PATH)/HTCStuff/libexif_lib1_jni_v09.so:system/lib/libexif_lib1_jni_v09.so
-endif
-
-# Music App
-ifeq ($(WITH_SHISHU_MUSIC),true)
-PRODUCT_COPY_FILES += \
-    $(SHISHUSTUFF_PATH)/Music/RetroMusic.apk:system/app/RetroMusic/RetroMusic.apk
-endif
-
-# File Manager
-ifeq ($(WITH_SHISHU_FM),true)
-PRODUCT_COPY_FILES += \
-    $(SHISHUSTUFF_PATH)/FileBrowser/MKExplorer.apk:system/app/MKExplorer/MKExplorer.apk
-endif
-
-#Browser
-ifeq ($(WITH_SHISHU_BROWSER),true)
-PRODUCT_COPY_FILES += \
-    $(SHISHUSTUFF_PATH)/Browser/RocketBrowser.apk:system/app/RocketBrowser/RocketBrowser.apk
-endif
-
-# OmniClock
-ifeq ($(WITH_SHISHU_CLOCK),true)
-PRODUCT_COPY_FILES += \
-    $(SHISHUSTUFF_PATH)/Clock/OmniClock.apk:system/app/OmniClock/OmniClock.apk
-endif
-
-# Launcher
-ifeq ($(WITH_SHISHU_LAUNCHER),true)
-PRODUCT_COPY_FILES += \
-    $(SHISHUSTUFF_PATH)/Launcher/MotoLauncher.apk:system/app/MotoLauncher/MotoLauncher.apk
 endif
 
 # Permissions MOD, etc part.
@@ -258,18 +184,9 @@ PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Permissions/Framework/SemcGenericUxpRes/SemcGenericUxpRes.apk:system/framework/SemcGenericUxpRes/SemcGenericUxpRes.apk
 endif
 
-#Check conditions to add shishu apps
-#Remember: The dash one is the public one, the other is the good one
+#Adding the prebuilt gapps stuff if it's a LT build so it's more fun
 ifeq ($(BUILD_TRUSHISHU),true)
-PRODUCT_COPY_FILES += \
-    $(SHISHUSTUFF_PATH)/Shishu/ShishuWalls.apk:system/app/ShishuWalls/ShishuWalls.apk\
-    $(SHISHUSTUFF_PATH)/Shishu/Aidonnou-Headers.apk:system/app/Aidonnou-Headers/Aidonnou-Headers.apk\
-    $(SHISHUSTUFF_PATH)/Shishu/Aidonnou-Extras.apk:system/app/Aidonnou-Extras/Aidonnou-Extras.apk\
-    $(SHISHUSTUFF_PATH)/Shishu/AboutShishu.apk:system/app/AboutShishu/AboutShishu.apk
-else
-PRODUCT_COPY_FILES += \
-    $(SHISHUSTUFF_PATH)/Shishu/About-Shishu.apk:system/app/AboutShishu/AboutShishu.apk\
-    $(SHISHUSTUFF_PATH)/Shishu/Aidonnou-Headers.apk:system/app/Aidonnou-Headers/Aidonnou-Headers.apk
+include vendor/shishu/prebuilt/BeansGapps/prebuilt.mk
 endif
 
 # Ringtone files
@@ -289,6 +206,7 @@ PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Sounds/Nights.ogg:system/media/audio/notifications/Nights.ogg \
     $(SHISHUSTUFF_PATH)/Sounds/Button.ogg:system/media/audio/notifications/Button.ogg \
     $(SHISHUSTUFF_PATH)/Sounds/Chimes.wav:system/media/audio/notifications/Chimes.wav \
+    $(SHISHUSTUFF_PATH)/Sounds/Consequences.ogg:system/media/audio/notifications/Consequences.ogg \
     $(SHISHUSTUFF_PATH)/Sounds/CyanMail.ogg:system/media/audio/notifications/CyanMail.ogg \
     $(SHISHUSTUFF_PATH)/Sounds/CyanMessage.ogg:system/media/audio/notifications/CyanMessage.ogg \
     $(SHISHUSTUFF_PATH)/Sounds/omni_notification1.ogg:system/media/audio/notifications/omni_notification1.ogg \
@@ -308,7 +226,7 @@ PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Sounds/Doxelis.ogg:system/media/audio/alarms/Doxelis.ogg \
     $(SHISHUSTUFF_PATH)/Sounds/DreambenderAlarm.ogg:system/media/audio/alarms/DreambenderAlarm.ogg \
     $(SHISHUSTUFF_PATH)/Sounds/Isostasy.ogg:system/media/audio/alarms/Isostasy.ogg \
-    $(SHISHUSTUFF_PATH)/Sounds/OutOfMindSaxSolo.ogg:system/media/audio/ringtones/OutOfMindSaxSolo.ogg \
+    $(SHISHUSTUFF_PATH)/Sounds/OutOfMindSaxSolo.ogg:system/media/audio/alarms/OutOfMindSaxSolo.ogg \
     $(SHISHUSTUFF_PATH)/Sounds/SlowPeels.ogg:system/media/audio/alarms/SlowPeels.ogg
 
 #Set the new custom sounds
@@ -316,8 +234,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.ringtone=Frost.ogg \
     ro.config.notification_sound=Nights.ogg \
     ro.config.alarm_alert=LikeWhat.ogg
-
-#Adding the prebuilt gapps stuff if it's a LT build so it's more fun
-ifeq ($(BUILD_TRUSHISHU),true)
-include vendor/bootleggers/prebuilt/BeansGapps/prebuilt.mk
-endif
