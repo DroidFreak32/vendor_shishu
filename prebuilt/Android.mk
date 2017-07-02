@@ -97,7 +97,7 @@ LOCAL_SRC_FILES := Browser/$(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
 LOCAL_CERTIFICATE := PRESIGNED
-LOCAL_OVERRIDES_PACKAGES := Browser Browser2 Jelly ViaBrowser
+LOCAL_OVERRIDES_PACKAGES := Browser Browser2 Jelly ViaBrowser Chromium
 include $(BUILD_PREBUILT)
 
 #Clock App
