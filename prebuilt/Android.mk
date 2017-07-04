@@ -108,7 +108,7 @@ LOCAL_SRC_FILES := Clock/$(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
 LOCAL_CERTIFICATE := PRESIGNED
-LOCAL_OVERRIDES_PACKAGES := DeskClock OmniClock DeskClockGoogle
+LOCAL_OVERRIDES_PACKAGES := DeskClock OmniClock DeskClockGoogle GDeskClock
 include $(BUILD_PREBUILT)
 
 #Launcher App
