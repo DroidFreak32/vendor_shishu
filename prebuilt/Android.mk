@@ -92,7 +92,7 @@ include $(BUILD_PREBUILT)
 #Browser App
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := RocketBrowser
+LOCAL_MODULE := OrbitumBrowser
 LOCAL_SRC_FILES := Browser/$(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
@@ -114,12 +114,12 @@ include $(BUILD_PREBUILT)
 #Launcher App
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := MotoLauncher
+LOCAL_MODULE := SMCLauncher
 LOCAL_SRC_FILES := Launcher/$(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
 LOCAL_CERTIFICATE := PRESIGNED
-LOCAL_OVERRIDES_PACKAGES := Launcher2 Launcher3 Trebuchet PixelLauncher VLauncher 
+LOCAL_OVERRIDES_PACKAGES := Launcher2 Launcher3 Trebuchet PixelLauncher VLauncher NovaLauncher Luna
 include $(BUILD_PREBUILT)
 
 ##Shishu Apps
