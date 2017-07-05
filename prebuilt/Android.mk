@@ -23,7 +23,7 @@ LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_PRIVILEGED_MODULE := true
-LOCAL_OVERRIDES_PACKAGES := Camera Camera2 Snap SnapdragonCamera MotCamera
+LOCAL_OVERRIDES_PACKAGES := Camera Camera2 Snap SnapdragonCamera MotCamera 
 LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
 include $(BUILD_PREBUILT)
 
@@ -36,7 +36,7 @@ LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_PRIVILEGED_MODULE := true
-LOCAL_OVERRIDES_PACKAGES := Gallery Gallery2 SnapdragonGallery 
+LOCAL_OVERRIDES_PACKAGES := Gallery Gallery2 SnapdragonGallery VanillaGallery
 LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
 include $(BUILD_PREBUILT)
 
@@ -75,7 +75,7 @@ LOCAL_SRC_FILES := Music/$(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
 LOCAL_CERTIFICATE := PRESIGNED
-LOCAL_OVERRIDES_PACKAGES := Music SnapdragonMusic crDroidMusic Phonograph Eleven
+LOCAL_OVERRIDES_PACKAGES := Music SnapdragonMusic crDroidMusic Phonograph Eleven VanillaMusic
 include $(BUILD_PREBUILT)
 
 #FileManager App
@@ -97,7 +97,7 @@ LOCAL_SRC_FILES := Browser/$(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
 LOCAL_CERTIFICATE := PRESIGNED
-LOCAL_OVERRIDES_PACKAGES := Browser Browser2 Jelly ViaBrowser Chromium
+LOCAL_OVERRIDES_PACKAGES := Browser Browser2 Jelly ViaBrowser Chromium Quark Quarks
 include $(BUILD_PREBUILT)
 
 #Clock App
