@@ -92,7 +92,7 @@ include $(BUILD_PREBUILT)
 #Browser App
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := OrbitumBrowser
+LOCAL_MODULE := ViaPrebuilt
 LOCAL_SRC_FILES := Browser/$(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
@@ -114,7 +114,7 @@ include $(BUILD_PREBUILT)
 #Launcher App
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := SMCLauncher
+LOCAL_MODULE := LawnchairStable
 LOCAL_SRC_FILES := Launcher/$(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional

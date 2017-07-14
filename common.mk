@@ -64,7 +64,7 @@ endif
 
 ifeq ($(WITH_SHISHU_BROWSER),true)
   PRODUCT_PACKAGES +=  \
-     OrbitumBrowser
+     ViaPrebuilt
 else
   PRODUCT_PACKAGES +=  \
      Browser2
@@ -80,7 +80,7 @@ endif
 
 ifeq ($(WITH_SHISHU_LAUNCHER),true)
   PRODUCT_PACKAGES +=  \
-     SMCLauncher
+     LawnchairStable
 else
   PRODUCT_PACKAGES +=  \
      Launcher2
