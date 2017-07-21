@@ -47,7 +47,7 @@ endif
 
 ifeq ($(WITH_SHISHU_MUSIC),true)
   PRODUCT_PACKAGES +=  \
-     RetroMusic
+     MezzoMusic
    
 else
   PRODUCT_PACKAGES +=  \
@@ -56,7 +56,7 @@ endif
 
 ifeq ($(WITH_SHISHU_FM),true)
   PRODUCT_PACKAGES +=  \
-     MKExplorer
+     RootBrowser
 else
   PRODUCT_PACKAGES +=  \
      CMFileManager
