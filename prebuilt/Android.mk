@@ -70,7 +70,7 @@ include $(BUILD_PREBUILT)
 #Music App
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := MezzoMusic
+LOCAL_MODULE := PulsarMusic
 LOCAL_SRC_FILES := Music/$(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
@@ -81,7 +81,7 @@ include $(BUILD_PREBUILT)
 #FileManager App
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := RootBrowser
+LOCAL_MODULE := MiXplorerPrebuilt
 LOCAL_SRC_FILES := FileManager/$(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
