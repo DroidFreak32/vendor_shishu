@@ -14,7 +14,8 @@
 
 # Prebuilt Packages
 PRODUCT_PACKAGES += \
-    LatinIMEG
+    LatinIMEG \
+    GoogleMsg
 
 # Include package overlays
 PRODUCT_PACKAGE_OVERLAYS += \
