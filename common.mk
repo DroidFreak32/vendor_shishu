@@ -47,7 +47,7 @@ endif
 
 ifeq ($(WITH_SHISHU_MUSIC),true)
   PRODUCT_PACKAGES +=  \
-     PulsarMusic
+     PhonoPrebuilt
    
 else
   PRODUCT_PACKAGES +=  \
