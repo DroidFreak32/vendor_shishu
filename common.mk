@@ -110,8 +110,9 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/shishu/overlay/common
 #Include extras makefile to copy more stuff
 include vendor/shishu/extra.mk
 
-#Set the new custom sounds
+#Set the new custom sounds + moving gboard theme here
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.com.google.ime.theme_id=6 \
     ro.config.ringtone=Frost.ogg \
     ro.config.notification_sound=Nights.ogg \
     ro.config.alarm_alert=LikeWhat.ogg

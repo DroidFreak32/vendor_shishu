@@ -21,9 +21,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/shishu/beansgapps/overlay/
 
-# build.prop entrys
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.com.google.ime.theme_id=5
+# build.prop entrys -- NOT ADDED BECAUSE OF TEST TO FIX RINGTONES
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    ro.com.google.ime.theme_id=6
 
 #dialer
 PRODUCT_PACKAGES += \
