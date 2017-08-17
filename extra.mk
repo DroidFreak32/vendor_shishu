@@ -223,9 +223,3 @@ PRODUCT_COPY_FILES += \
     $(SHISHUSTUFF_PATH)/Sounds/Isostasy.ogg:system/media/audio/alarms/Isostasy.ogg \
     $(SHISHUSTUFF_PATH)/Sounds/OutOfMindSaxSolo.ogg:system/media/audio/alarms/OutOfMindSaxSolo.ogg \
     $(SHISHUSTUFF_PATH)/Sounds/SlowPeels.ogg:system/media/audio/alarms/SlowPeels.ogg
-
-#Set the new custom sounds
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.ringtone=Frost.ogg \
-    ro.config.notification_sound=Nights.ogg \
-    ro.config.alarm_alert=LikeWhat.ogg

@@ -109,3 +109,9 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/shishu/overlay/common
 
 #Include extras makefile to copy more stuff
 include vendor/shishu/extra.mk
+
+#Set the new custom sounds
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.ringtone=Frost.ogg \
+    ro.config.notification_sound=Nights.ogg \
+    ro.config.alarm_alert=LikeWhat.ogg
