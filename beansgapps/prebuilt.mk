@@ -17,13 +17,20 @@ PRODUCT_PACKAGES += \
     LatinIMEG \
     GoogleMsg
 
+# build.prop entrys -- NOT ADDED BECAUSE OF TEST TO FIX RINGTONES
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.com.google.ime.theme_id=6
+
+# Make this optional too as some ROM's dialer have Call Recording (RR for ex) and so ROM's dialer may be more preferable.
+ifndef WITH_GOOGLE_DIALER
+    WITH_GOOGLE_DIALER := false
+endif
+
+ifeq ($(WITH_GOOGLE_DIALER),true)
+
 # Include package overlays
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/shishu/beansgapps/overlay/
-
-# build.prop entrys -- NOT ADDED BECAUSE OF TEST TO FIX RINGTONES
-#PRODUCT_PROPERTY_OVERRIDES += \
-#    ro.com.google.ime.theme_id=6
 
 #dialer
 PRODUCT_PACKAGES += \
@@ -33,6 +40,7 @@ PRODUCT_PACKAGES += \
 #telephony blobs
 PRODUCT_COPY_FILES += \
     vendor/shishu/beansgapps/etc/permissions/com.google.android.dialer.support.xml:system/etc/permissions/com.google.android.dialer.support.xml
+endif
 
 # Facelock lib
 ifeq ($(TARGET_ARCH),arm)

@@ -2,27 +2,31 @@
 ## Define automatically all the shishu stuff.
 
 ifndef WITH_SHISHU_HTC 
-    WITH_SHISHU_HTC := true
+    WITH_SHISHU_HTC := false
 endif
 
 ifndef WITH_SHISHU_MUSIC
-    WITH_SHISHU_MUSIC := true
+    WITH_SHISHU_MUSIC := false
 endif
 
 ifndef WITH_SHISHU_FM
-    WITH_SHISHU_FM := true
+    WITH_SHISHU_FM := false
 endif
 
 ifndef WITH_SHISHU_BROWSER
-    WITH_SHISHU_BROWSER := true
+    WITH_SHISHU_BROWSER := false
 endif
 
 ifndef WITH_SHISHU_CLOCK
-    WITH_SHISHU_CLOCK := true
+    WITH_SHISHU_CLOCK := false
 endif
 
 ifndef WITH_SHISHU_LAUNCHER 
-    WITH_SHISHU_LAUNCHER := true
+    WITH_SHISHU_LAUNCHER := false
+endif
+
+ifndef BUILD_SHISHU
+    BUILD_SHISHU := false
 endif
 
 ifndef BUILD_TRUSHISHU
@@ -86,13 +90,25 @@ else
      Launcher2
 endif
 
-ifeq ($(BUILD_TRUSHISHU),true)
+ifeq ($(BUILD_SHISHU),true)
   PRODUCT_PACKAGES +=  \
      ShishuWalls \
      Aidonnou-Extras \
      Aidonnou-Headers \
      AboutShishu
-else
+
+  #Add a extra overlay folder just for the wallpaper
+  PRODUCT_PACKAGE_OVERLAYS += vendor/shishu/overlay/common
+
+  #Include extras makefile to copy more stuff
+  include vendor/shishu/extra.mk
+
+  #Set the new custom sounds
+  PRODUCT_PROPERTY_OVERRIDES += \
+      ro.config.ringtone=Frost.ogg \
+      ro.config.notification_sound=Nights.ogg \
+      ro.config.alarm_alert=LikeWhat.ogg
+
   PRODUCT_PACKAGES +=  \
      About-Shishu \
      AidonnouHeaders
@@ -104,15 +120,3 @@ ifeq ($(BUILD_TRUSHISHU),true)
 -include vendor/shishu/beansgapps/prebuilt.mk
 endif
 
-#Add a extra overlay folder just for the wallpaper
-PRODUCT_PACKAGE_OVERLAYS += vendor/shishu/overlay/common
-
-#Include extras makefile to copy more stuff
-include vendor/shishu/extra.mk
-
-#Set the new custom sounds + moving gboard theme here
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.com.google.ime.theme_id=6 \
-    ro.config.ringtone=Frost.ogg \
-    ro.config.notification_sound=Nights.ogg \
-    ro.config.alarm_alert=LikeWhat.ogg
