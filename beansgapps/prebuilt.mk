@@ -18,7 +18,7 @@ PRODUCT_PACKAGES += \
     GoogleMsg
 
 # build.prop entrys -- NOT ADDED BECAUSE OF TEST TO FIX RINGTONES
-PRODUCT_PROPERTY_OVERRIDES += \
+#PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.ime.theme_id=6
 
 # Make this optional too as some ROM's dialer have Call Recording (RR for ex) and so ROM's dialer may be more preferable.
