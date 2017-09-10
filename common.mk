@@ -25,6 +25,10 @@ ifndef WITH_SHISHU_LAUNCHER
     WITH_SHISHU_LAUNCHER := false
 endif
 
+ifndef WITH_GCAM
+    WITH_GCAM := false
+endif
+
 ifndef BUILD_SHISHU
     BUILD_SHISHU := false
 endif
@@ -120,3 +124,7 @@ ifeq ($(BUILD_TRUSHISHU),true)
 -include vendor/shishu/beansgapps/prebuilt.mk
 endif
 
+ifeq ($(WITH_GCAM),true)
+  PRODUCT_PACKAGES +=  \
+     GoogleCamera
+endif
