@@ -25,16 +25,20 @@ ifndef WITH_SHISHU_LAUNCHER
     WITH_SHISHU_LAUNCHER := false
 endif
 
-ifndef WITH_GCAM
-    WITH_GCAM := false
-endif
-
 ifndef BUILD_SHISHU
     BUILD_SHISHU := false
 endif
 
 ifndef BUILD_TRUSHISHU
     BUILD_TRUSHISHU := false
+endif
+
+ifndef WITH_GCAM
+    WITH_GCAM := false
+endif
+
+ifndef WITH_ADAWAY
+    WITH_ADAWAY := false
 endif
 
 # Shishu Stuff directory
@@ -127,4 +131,9 @@ endif
 ifeq ($(WITH_GCAM),true)
   PRODUCT_PACKAGES +=  \
      GoogleCamera
+endif
+
+ifeq ($(WITH_ADAWAY),true)
+  PRODUCT_PACKAGES +=  \
+     AdAway
 endif
