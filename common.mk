@@ -41,6 +41,10 @@ ifndef WITH_ADAWAY
     WITH_ADAWAY := false
 endif
 
+ifndef WITH_OPGAL
+    WITH_OPGAL := false
+endif
+
 # Shishu Stuff directory
 SHISHUSTUFF_PATH := vendor/shishu/prebuilt
 
@@ -76,7 +80,7 @@ endif
 
 ifeq ($(WITH_SHISHU_BROWSER),true)
   PRODUCT_PACKAGES +=  \
-     ViaPrebuilt
+     FirefoxFocus
 else
   PRODUCT_PACKAGES +=  \
      Browser2
@@ -136,4 +140,9 @@ endif
 ifeq ($(WITH_ADAWAY),true)
   PRODUCT_PACKAGES +=  \
      AdAway
+endif
+
+ifeq ($(WITH_OPGAL),true)
+  PRODUCT_PACKAGES +=  \
+     OnePlusGallery
 endif
