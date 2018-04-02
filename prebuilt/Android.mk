@@ -65,21 +65,19 @@ LOCAL_PRIVILEGED_MODULE := true
 LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
 include $(BUILD_PREBUILT)
 
-# LatinIMEGooglePrebuilt
 include $(CLEAR_VARS)
 LOCAL_MODULE := LatinIMEGooglePrebuilt
 LOCAL_MODULE_TAGS := optional
-ifeq ($(TARGET_ARCH),arm)
-LOCAL_SRC_FILES := LatinIMEGooglePrebuilt/arm/LatinIMEGooglePrebuilt/LatinIMEGooglePrebuilt.apk
-else
-LOCAL_SRC_FILES := LatinIMEGooglePrebuilt/arm64/LatinIMEGooglePrebuilt/LatinIMEGooglePrebuilt.apk
-endif
+LOCAL_SRC_FILES := LatinIMEGooglePrebuilt/$(TARGET_ARCH)/LatinIMEGooglePrebuilt.apk
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_MODULE_CLASS := APPS
 LOCAL_OVERRIDES_PACKAGES := LatinIME
 LOCAL_JNI_SHARED_LIBRARIES := libjni_latinime
 LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
+LOCAL_DEX_PREOPT := false
 include $(BUILD_PREBUILT)
+
+
 
 #Music App
 

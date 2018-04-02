@@ -145,13 +145,13 @@ ifeq ($(WITH_GBOARD),true)
     PRODUCT_PACKAGES +=  \
         LatinIMEGooglePrebuilt
         
-    # PRODUCT_COPY_FILES += \
-    # vendor/gapps/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+    PRODUCT_COPY_FILES += \
+    vendor/shishu/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 
-    # ifeq ($(TARGET_ARCH),arm64)
-    # PRODUCT_COPY_FILES += \
-    #         vendor/gapps/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
-    # endif
+    ifeq ($(TARGET_ARCH),arm64)
+    PRODUCT_COPY_FILES += \
+        vendor/shishu/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
+    endif
 endif
 
 ifeq ($(WITH_ADAWAY),true)
