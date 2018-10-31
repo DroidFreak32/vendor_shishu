@@ -21,7 +21,7 @@ ifndef WITH_SHISHU_CLOCK
     WITH_SHISHU_CLOCK := false
 endif
 
-ifndef WITH_SHISHU_LAUNCHER 
+ifndef WITH_SHISHU_LAUNCHER
     WITH_SHISHU_LAUNCHER := false
 endif
 
@@ -58,7 +58,7 @@ ifeq ($(WITH_SHISHU_HTC),true)
         HTCEditor \
         HTCGallery \
         HTCVideo
-     
+
 else
     PRODUCT_PACKAGES +=  \
         Camera2 \
@@ -68,7 +68,7 @@ endif
 ifeq ($(WITH_SHISHU_MUSIC),true)
     PRODUCT_PACKAGES +=  \
         PulsarMusic
-     
+
 else
     PRODUCT_PACKAGES +=  \
         Music
@@ -144,7 +144,7 @@ endif
 ifeq ($(WITH_GBOARD),true)
     PRODUCT_PACKAGES +=  \
         LatinIMEGooglePrebuilt
-        
+
     PRODUCT_COPY_FILES += \
     vendor/shishu/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 
