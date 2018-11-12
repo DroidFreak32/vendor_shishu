@@ -1,10 +1,6 @@
 ## Shishu Makefile. Done without Knowledge. 2017.
 ## Define automatically all the shishu stuff.
 
-ifndef WITH_SHISHU_HTC 
-    WITH_SHISHU_HTC := false
-endif
-
 ifndef WITH_SHISHU_MUSIC
     WITH_SHISHU_MUSIC := false
 endif
@@ -21,16 +17,12 @@ ifndef WITH_SHISHU_CLOCK
     WITH_SHISHU_CLOCK := false
 endif
 
-ifndef WITH_SHISHU_LAUNCHER 
-    WITH_SHISHU_LAUNCHER := false
+ifndef WITH_LAWNCHAIR_LAUNCHER
+    WITH_LAWNCHAIR_LAUNCHER := false
 endif
 
 ifndef BUILD_SHISHU
     BUILD_SHISHU := false
-endif
-
-ifndef BUILD_TRUSHISHU
-    BUILD_TRUSHISHU := false
 endif
 
 ifndef WITH_GCAM
@@ -41,99 +33,101 @@ ifndef WITH_ADAWAY
     WITH_ADAWAY := false
 endif
 
+ifndef WITH_OPGAL
+    WITH_OPGAL := false
+endif
+
+ifndef WITH_GBOARD
+    WITH_GBOARD := false
+endif
+
 # Shishu Stuff directory
 SHISHUSTUFF_PATH := vendor/shishu/prebuilt
 
-ifeq ($(WITH_SHISHU_HTC),true)
-  PRODUCT_PACKAGES +=  \
-     HTCamera \
-     HTCEditor \
-     HTCGallery \
-     HTCVideo
-   
-else
-  PRODUCT_PACKAGES +=  \
-     Camera2 \
-     Gallery2
-endif
+PRODUCT_PACKAGES +=  \
+    Camera2 \
+    Gallery2
 
 ifeq ($(WITH_SHISHU_MUSIC),true)
-  PRODUCT_PACKAGES +=  \
-     PulsarMusic
-   
+    PRODUCT_PACKAGES +=  \
+        PulsarMusic
 else
-  PRODUCT_PACKAGES +=  \
-     Music
+    PRODUCT_PACKAGES +=  \
+        Music
 endif
 
 ifeq ($(WITH_SHISHU_FM),true)
-  PRODUCT_PACKAGES +=  \
-     MiXplorerPrebuilt
+    PRODUCT_PACKAGES +=  \
+        MiXplorerPrebuilt
 else
-  PRODUCT_PACKAGES +=  \
-     CMFileManager
+    PRODUCT_PACKAGES +=  \
+        CMFileManager
 endif
 
 ifeq ($(WITH_SHISHU_BROWSER),true)
-  PRODUCT_PACKAGES +=  \
-     ViaPrebuilt
+    PRODUCT_PACKAGES +=  \
+        FirefoxFocus
 else
-  PRODUCT_PACKAGES +=  \
-     Browser2
+    PRODUCT_PACKAGES +=  \
+        Browser2
 endif
 
 ifeq ($(WITH_SHISHU_CLOCK),true)
-  PRODUCT_PACKAGES +=  \
-     OmniClockPS
+    PRODUCT_PACKAGES +=  \
+        OmniClockPS
 else
-  PRODUCT_PACKAGES +=  \
-     DeskClock
+    PRODUCT_PACKAGES +=  \
+        DeskClock
 endif
 
-ifeq ($(WITH_SHISHU_LAUNCHER),true)
-  PRODUCT_PACKAGES +=  \
-     LawnchairStable
+ifeq ($(WITH_LAWNCHAIR_LAUNCHER),true)
+    PRODUCT_PACKAGES +=  \
+        LawnchairStable
 else
-  PRODUCT_PACKAGES +=  \
-     Launcher2
+    PRODUCT_PACKAGES +=  \
+        Launcher2
 endif
 
 ifeq ($(BUILD_SHISHU),true)
-  PRODUCT_PACKAGES +=  \
-     ShishuWalls \
-     Aidonnou-Extras \
-     Aidonnou-Headers \
-     AboutShishu
 
-  #Add a extra overlay folder just for the wallpaper
-  PRODUCT_PACKAGE_OVERLAYS += vendor/shishu/overlay/common
+    #Add a extra overlay folder just for the wallpaper
+    PRODUCT_PACKAGE_OVERLAYS += vendor/shishu/overlay/common
 
-  #Include extras makefile to copy more stuff
-  include vendor/shishu/extra.mk
+    #Include extras makefile to copy more stuff
+    include vendor/shishu/extra.mk
 
-  #Set the new custom sounds
-  PRODUCT_PROPERTY_OVERRIDES += \
-      ro.config.ringtone=Frost.ogg \
-      ro.config.notification_sound=Nights.ogg \
-      ro.config.alarm_alert=LikeWhat.ogg
+    #Set the new custom sounds
+    PRODUCT_PROPERTY_OVERRIDES += \
+        ro.config.ringtone=Frost.ogg \
+        ro.config.notification_sound=Nights.ogg \
+        ro.config.alarm_alert=LikeWhat.ogg
 
-  PRODUCT_PACKAGES +=  \
-     About-Shishu \
-     AidonnouHeaders
-endif
-
-#Include PureNexus Gapps made by beanstown106
-#Adding the prebuilt gapps stuff if it's a LT build so it's more fun
-ifeq ($(BUILD_TRUSHISHU),true)
--include vendor/shishu/beansgapps/prebuilt.mk
 endif
 
 ifeq ($(WITH_GCAM),true)
-  PRODUCT_PACKAGES +=  \
-     GoogleCamera
+    PRODUCT_PACKAGES +=  \
+        GoogleCamera
+endif
+
+ifeq ($(WITH_GBOARD),true)
+    PRODUCT_PACKAGES +=  \
+        LatinIMEGooglePrebuilt
+
+    PRODUCT_COPY_FILES += \
+    vendor/shishu/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+
+    ifeq ($(TARGET_ARCH),arm64)
+    PRODUCT_COPY_FILES += \
+        vendor/shishu/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
+    endif
 endif
 
 ifeq ($(WITH_ADAWAY),true)
-  PRODUCT_PACKAGES +=  \
-     AdAway
+    PRODUCT_PACKAGES +=  \
+        AdAway
+endif
+
+ifeq ($(WITH_OPGAL),true)
+    PRODUCT_PACKAGES +=  \
+        OnePlusGallery
 endif
