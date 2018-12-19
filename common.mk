@@ -17,8 +17,8 @@ ifndef WITH_SHISHU_CLOCK
     WITH_SHISHU_CLOCK := false
 endif
 
-ifndef WITH_LAWNCHAIR_LAUNCHER
-    WITH_LAWNCHAIR_LAUNCHER := false
+ifndef WITH_CUSTOM_LAUNCHER
+    WITH_CUSTOM_LAUNCHER := false
 endif
 
 ifndef BUILD_SHISHU
@@ -80,12 +80,12 @@ else
         DeskClock
 endif
 
-ifeq ($(WITH_LAWNCHAIR_LAUNCHER),true)
-    PRODUCT_PACKAGES +=  \
-        LawnchairStable
-else
+ifeq ($(WITH_CUSTOM_LAUNCHER),false)
     PRODUCT_PACKAGES +=  \
         Launcher2
+else
+    PRODUCT_PACKAGES +=  \
+        $(WITH_CUSTOM_LAUNCHER)
 endif
 
 ifeq ($(BUILD_SHISHU),true)

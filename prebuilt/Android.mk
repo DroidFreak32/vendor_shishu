@@ -123,7 +123,7 @@ LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_OVERRIDES_PACKAGES := DeskClock OmniClock DeskClockGoogle GDeskClock
 include $(BUILD_PREBUILT)
 
-#Launcher App
+#Launcher Apps
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := LawnchairStable
@@ -131,7 +131,34 @@ LOCAL_SRC_FILES := Launcher/$(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
 LOCAL_CERTIFICATE := PRESIGNED
-LOCAL_OVERRIDES_PACKAGES := Launcher2 Launcher3 Trebuchet PixelLauncher VLauncher NovaLauncher Luna Nova
+LOCAL_OVERRIDES_PACKAGES := Launcher2 Launcher3 Trebuchet PixelLauncher VLauncher Luna Nova NovaLauncher TUILauncher NiagaraLauncher
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := TUILauncher
+LOCAL_SRC_FILES := Launcher/$(LOCAL_MODULE).apk
+LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_TAGS := optional
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_OVERRIDES_PACKAGES := Launcher2 Launcher3 Trebuchet PixelLauncher VLauncher Luna Nova NovaLauncher NiagaraLauncher LawnchairStable
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := NiagaraLauncher
+LOCAL_SRC_FILES := Launcher/$(LOCAL_MODULE).apk
+LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_TAGS := optional
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_OVERRIDES_PACKAGES := Launcher2 Launcher3 Trebuchet PixelLauncher VLauncher Luna Nova NovaLauncher TUILauncher LawnchairStable
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := NovaLauncher
+LOCAL_SRC_FILES := Launcher/$(LOCAL_MODULE).apk
+LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_TAGS := optional
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_OVERRIDES_PACKAGES := Launcher2 Launcher3 Trebuchet PixelLauncher VLauncher Luna Nova TUILauncher NiagaraLauncher LawnchairStable
 include $(BUILD_PREBUILT)
 
 # Google Camera
