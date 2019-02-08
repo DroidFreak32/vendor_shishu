@@ -101,15 +101,24 @@ LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_OVERRIDES_PACKAGES := CMFileManager Amaze AmazeFM crDroidFileManager
 include $(BUILD_PREBUILT)
 
-#Browser App
+#Browser Apps
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := FirefoxFocus
-LOCAL_SRC_FILES := Browser/$(TARGET_ARCH)/$(LOCAL_MODULE).apk
+LOCAL_SRC_FILES := Browser/$(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
 LOCAL_CERTIFICATE := PRESIGNED
-LOCAL_OVERRIDES_PACKAGES := Browser Browser2 Jelly ViaBrowser Chromium Quark Quarks
+LOCAL_OVERRIDES_PACKAGES := Browser Browser2 Brave Jelly ViaBrowser Chromium Quark Quarks
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := Brave
+LOCAL_SRC_FILES := Browser/$(LOCAL_MODULE).apk
+LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_TAGS := optional
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_OVERRIDES_PACKAGES := Browser Browser2 FirefoxFocus Jelly ViaBrowser Chromium Quark Quarks
 include $(BUILD_PREBUILT)
 
 #Clock App
@@ -123,7 +132,7 @@ LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_OVERRIDES_PACKAGES := DeskClock OmniClock DeskClockGoogle GDeskClock
 include $(BUILD_PREBUILT)
 
-#Launcher App
+#Launcher Apps
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := LawnchairStable
@@ -131,7 +140,34 @@ LOCAL_SRC_FILES := Launcher/$(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
 LOCAL_CERTIFICATE := PRESIGNED
-LOCAL_OVERRIDES_PACKAGES := Launcher2 Launcher3 Trebuchet PixelLauncher VLauncher NovaLauncher Luna Nova
+LOCAL_OVERRIDES_PACKAGES := Launcher2 Launcher3 Trebuchet PixelLauncher VLauncher Luna Nova NovaLauncher TUILauncher NiagaraLauncher
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := TUILauncher
+LOCAL_SRC_FILES := Launcher/$(LOCAL_MODULE).apk
+LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_TAGS := optional
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_OVERRIDES_PACKAGES := Launcher2 Launcher3 Trebuchet PixelLauncher VLauncher Luna Nova NovaLauncher NiagaraLauncher LawnchairStable
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := NiagaraLauncher
+LOCAL_SRC_FILES := Launcher/$(LOCAL_MODULE).apk
+LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_TAGS := optional
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_OVERRIDES_PACKAGES := Launcher2 Launcher3 Trebuchet PixelLauncher VLauncher Luna Nova NovaLauncher TUILauncher LawnchairStable
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := NovaLauncher
+LOCAL_SRC_FILES := Launcher/$(LOCAL_MODULE).apk
+LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_TAGS := optional
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_OVERRIDES_PACKAGES := Launcher2 Launcher3 Trebuchet PixelLauncher VLauncher Luna Nova TUILauncher NiagaraLauncher LawnchairStable
 include $(BUILD_PREBUILT)
 
 # Google Camera
