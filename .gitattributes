@@ -1,0 +1,14 @@
+prebuilt/Launcher/LawnchairStable.apk filter=lfs diff=lfs merge=lfs -text
+prebuilt/Launcher/NiagaraLauncher.apk filter=lfs diff=lfs merge=lfs -text
+prebuilt/Launcher/NovaLauncher.apk filter=lfs diff=lfs merge=lfs -text
+prebuilt/Launcher/TUILauncher.apk filter=lfs diff=lfs merge=lfs -text
+prebuilt/Clock/OmniClockPS.apk filter=lfs diff=lfs merge=lfs -text
+prebuilt/FileManager/MiXplorerPrebuilt.apk filter=lfs diff=lfs merge=lfs -text
+prebuilt/GoogleCamera/GoogleCamera.apk filter=lfs diff=lfs merge=lfs -text
+prebuilt/AdAway/AdAway.apk filter=lfs diff=lfs merge=lfs -text
+prebuilt/Browser/Brave.apk filter=lfs diff=lfs merge=lfs -text
+prebuilt/Browser/FirefoxFocus.apk filter=lfs diff=lfs merge=lfs -text
+prebuilt/Browser/ViaPrebuilt.apk filter=lfs diff=lfs merge=lfs -text
+prebuilt/Gallery/OnePlusGallery.apk filter=lfs diff=lfs merge=lfs -text
+prebuilt/GoogleCamera/GoogleCamera-Pixel2Mod-Arnova8G2-V6-Beta15.apk filter=lfs diff=lfs merge=lfs -text
+prebuilt/Music/PulsarMusic.apk filter=lfs diff=lfs merge=lfs -text
